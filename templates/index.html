@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<HTML>
+	<head>
+		<title>InventoryReact</title>
+		
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>
+	</head>
+	<body>
+		<div id="inventory-react"></div>
+		<script type="text/jsx">
+		  var InventoryReact = React.createClass({
+		  render: function(){
+		  
+		  return (
+		  <div className="inventoryReact">
+		    <h1>Inventory React testing</h1>
+		  </div>
+		  );
+		  }
+		  });
+		  
+		  React.render(
+		  <InventoryReact />,
+		  document.getElementById('inventory-react')
+		  );
+		</script>
+	</body>
+</HTML>

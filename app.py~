@@ -1,5 +1,0 @@
-from flask import Flask, request, render_template
-from mongoengine import connect
-
-class User(Document):
-    
