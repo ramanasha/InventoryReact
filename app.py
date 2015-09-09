@@ -24,12 +24,9 @@ class User(Document):
     user_pswd = StringField()
     user_type = StringField(choices= user_category)
 
-
-
 @app.route('/')
 def index():
     return render_template('index.html')
-
 
 @app.route('/products')
 def products():
