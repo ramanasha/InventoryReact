@@ -31,8 +31,12 @@ def index():
 @app.route('/products')
 def products():
     products = Item.objects.all()
-    final_products = { 'products': products }
     return products.to_json()
+
+@app.route('/products/<item_id>')
+def get_product(item_id):
+    item = Item.objects.get(id=item_id)
+    return item.to_json()
 
 if __name__ == '__main__':
     app.run(debug=True)
