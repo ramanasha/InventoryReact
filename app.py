@@ -1,8 +1,10 @@
 from flask import Flask, request, render_template, jsonify
 from mongoengine import *
 import json
+from flask.ext.cors import CORS
 
 app = Flask(__name__)
+cors = CORS(app)
 
 connect('inventory')
 
@@ -12,9 +14,9 @@ class Item(Document):
     item_name = StringField()
     item_sku = StringField()
     item_type = StringField(choices= item_category)
-    item_stockable = BooleanField()
+    item_stockable = BooleanField(default=False)
     item_price = FloatField()
-    item_instock = BooleanField()
+    item_instock = BooleanField(default=False)
 
 user_category = ('admin','user')
     
