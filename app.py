@@ -12,11 +12,13 @@ item_category = ('industrial','commercial','garments','electronics')
 
 class Item(Document):
     item_name = StringField()
+    item_description = StringField()
     item_sku = StringField()
     item_type = StringField(choices= item_category)
     item_stockable = BooleanField(default=False)
     item_price = FloatField()
     item_instock = BooleanField(default=False)
+    item_units = IntField()
 
 user_category = ('admin','user')
     
