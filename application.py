@@ -4,7 +4,7 @@ import json
 from flask.ext.cors import CORS
 
 application = Flask(__name__)
-cors = CORS(app)
+cors = CORS(application)
 
 connect('inventory')
 
