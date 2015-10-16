@@ -3,7 +3,7 @@ from mongoengine import *
 import json
 from flask.ext.cors import CORS
 
-app = Flask(__name__)
+application = Flask(__name__)
 cors = CORS(app)
 
 connect('inventory')
@@ -28,20 +28,23 @@ class User(Document):
     user_pswd = StringField()
     user_type = StringField(choices= user_category)
 
-@app.route('/')
+@application.route('/')
+@application.route('/index.html')
+@application.route('/index')
 def index():
     return render_template('index.html')
 
-@app.route('/products')
+@application.route('/products')
 def products():
     products = Item.objects.all()
     return products.to_json()
 
-@app.route('/products/<item_id>')
+@application.route('/products/<item_id>')
 def get_product(item_id):
     item = Item.objects.get(id=item_id)
     return item.to_json()
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    application.debug = True
+    application.run()
         
