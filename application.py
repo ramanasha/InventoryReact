@@ -6,7 +6,7 @@ from flask.ext.cors import CORS
 application = Flask(__name__)
 cors = CORS(application)
 
-connect('inventory')
+connect('inventory' host='54.179.172.239', port=27017)
 
 item_category = ('industrial','commercial','garments','electronics')
 
