@@ -7,7 +7,6 @@ application = Flask(__name__)
 cors = CORS(application)
 
 connect('inventory')
-
 item_category = ('industrial','commercial','garments','electronics')
 
 class Item(Document):
