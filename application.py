@@ -6,7 +6,7 @@ from flask.ext.cors import CORS
 application = Flask(__name__)
 cors = CORS(application)
 
-connect('inventory', host='ds045054.mongolab.com', port=45054, username='inventory_user', password='GameHalt')
+connect('inventory', host='ds045054.mongolab.com', port=45054, username='', password='')
 
 item_category = ('industrial', 'commercial', 'garments', 'electronics')
 
